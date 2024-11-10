@@ -93,5 +93,11 @@ cd ~/fisco/swarm-app-2.0
 cd dist
 bash asset_run.sh deploy 2 100 ~/Desktop/1.txt
 ```
-Where `1.txt` contains account names.
+Where `1.txt` contains account names. For example:
 ```
+A1
+A2
+B1
+B2
+C1
+D1
