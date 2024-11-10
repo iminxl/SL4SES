@@ -68,6 +68,8 @@ bash contract2java.sh solidity -s contracts/solidity/Swarm.sol -p org.fisco.bcos
 
 ### 2. Install IntelliJ IDE and configure the project
 
+In IntelliJ IDE, create a new Gradle project, selecting both **Gradle** and **Java**, and name the project `swarm-app-2.0`. Update the `build.gradle` file based on the contents of Swarm 2.0. Copy the configuration file `applicationContext.xml` into the `swarm-app-2.0/src/test/resources` directory. 
+
 ### 3. Configure SDK certificates
 ```bash
 cd ~/fisco
@@ -79,8 +81,9 @@ cp -r nodes/127.0.0.1/sdk/* swarm-app-2.0/src/main/resources/conf
 ### 4. Import compiled contract Java class into project
 ```bash
 cd ~/fisco
-cp console/contracts/sdk/java/org/fisco/bcos/swarm/contract/Swarm.java asset-app-3.0/src/main/java/org/fisco/bcos/swarm/contract/Swarm.java
+cp console/contracts/sdk/java/org/fisco/bcos/swarm/contract/Swarm.java swarm-app-2.0/src/main/java/org/fisco/bcos/swarm/contract/Swarm.java
 ```
+Copy `SwarmClient.java` into the `swarm-app-2.0/src/main/java/org/fisco/bcos/swarm/client` directory, where it will use `Swarm.java` to deploy and interact with the contract. In the `swarm-app-2.0/tool` directory, add a script named `swarm_run.sh` to execute `SwarmClient`.
 
 ### 5. Build the project
 ```bash
